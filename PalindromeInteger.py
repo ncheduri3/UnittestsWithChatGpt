@@ -38,3 +38,5 @@ class IsPalindromeTestCase(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+#All unit tests are correct and passed
