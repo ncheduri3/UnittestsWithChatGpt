@@ -14,6 +14,7 @@ def findOcurrences(text: str, first: str, second: str) -> List[str]:
         if words[word] == first and words[word + 1] == second:
             thirds.append(words[word + 2])
     return thirds
+
 class TestFindOcurrencesCorrected(unittest.TestCase):
     def test_empty_text(self):
         text = "There"
@@ -56,48 +57,7 @@ class TestFindOcurrencesCorrected(unittest.TestCase):
         second = "second"
         expected = ["first", "first"]
         self.assertEqual(findOcurrences(text, first, second), expected)
-class TestFindOcurrences(unittest.TestCase):
-    def test_empty_text(self):
-        text = ""
-        first = "hello"
-        second = "world"
-        expected = []
-        self.assertEqual(findOcurrences(text, first, second), expected)
 
-    def test_no_occurrences(self):
-        text = "This is a sample sentence."
-        first = "hello"
-        second = "world"
-        expected = []
-        self.assertEqual(findOcurrences(text, first, second), expected)
-
-    def test_single_occurrence(self):
-        text = "hello world hello there world"
-        first = "hello"
-        second = "world"
-        expected = ["there"]
-        self.assertEqual(findOcurrences(text, first, second), expected)
-
-    def test_multiple_occurrences(self):
-        text = "hello world hello there world hello"
-        first = "hello"
-        second = "world"
-        expected = ["there", "hello"]
-        self.assertEqual(findOcurrences(text, first, second), expected)
-
-    def test_consecutive_occurrences(self):
-        text = "hello world hello world hello"
-        first = "hello"
-        second = "world"
-        expected = ["world", "hello"]
-        self.assertEqual(findOcurrences(text, first, second), expected)
-
-    def test_long_text(self):
-        text = "this is a long text with multiple occurrences of first and second words. first second first second first second."
-        first = "first"
-        second = "second"
-        expected = ["words.", "first", "first."]
-        self.assertEqual(findOcurrences(text, first, second), expected)
 
 if __name__ == '__main__':
     unittest.main()

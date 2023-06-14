@@ -76,48 +76,5 @@ class TestIsAlienSortedCorrected(unittest.TestCase):
         expected = False
         self.assertEqual(isAlienSorted(words, order), expected)
 
-class TestIsAlienSorted(unittest.TestCase):
-    def test_empty_words(self):
-        words = []
-        order = "abcdefghijklmnopqrstuvwxyz"
-        expected = True
-        self.assertEqual(isAlienSorted(words, order), expected)
-
-    def test_single_word(self):
-        words = ["apple"]
-        order = "abcdefghijklmnopqrstuvwxyz"
-        expected = True
-        self.assertEqual(isAlienSorted(words, order), expected)
-
-    def test_sorted_words(self):
-        words = ["hello", "leetcode", "world"]
-        order = "hlabcdefgijkmnopqrstuvwxyz"
-        expected = True
-        self.assertEqual(isAlienSorted(words, order), expected)
-
-    def test_unsorted_words(self):
-        words = ["word", "world", "hello"]
-        order = "hlabcdefgijkmnopqrstuvwxyz"
-        expected = False
-        self.assertEqual(isAlienSorted(words, order), expected)
-
-    def test_same_starting_letters(self):
-        words = ["apple", "ape", "application"]
-        order = "abcdefghijklmnopqrstuvwxyz"
-        expected = True
-        self.assertEqual(isAlienSorted(words, order), expected)
-
-    def test_same_words(self):
-        words = ["same", "same", "same"]
-        order = "abcdefghijklmnopqrstuvwxyz"
-        expected = True
-        self.assertEqual(isAlienSorted(words, order), expected)
-
-    def test_custom_order(self):
-        words = ["word", "leetcode", "hello"]
-        order = "olhecdtbwjsykarxvznipgufmq"
-        expected = True
-        self.assertEqual(isAlienSorted(words, order), expected)
-
 if __name__ == '__main__':
     unittest.main()

@@ -13,66 +13,59 @@ from typing import List
 # rec1 and rec2 represent a valid rectangle with a non-zero area.
 
 
-class Solution:
-    def isRectangleOverlap(self, rec1: List[int], rec2: List[int]) -> bool:
-        def overlap(a1, a2, b1, b2):
-            if a1 > b1:
-                a1, a2, b1, b2 = b1, b2, a1, a2
+def isRectangleOverlap(rec1: List[int], rec2: List[int]) -> bool:
+    def overlap(a1, a2, b1, b2):
+        if a1 > b1:
+            a1, a2, b1, b2 = b1, b2, a1, a2
 
-            if a2 <= b1:
-                return False
-            else:
-                return True
-
-        ax1, ay1, ax2, ay2 = rec1[0], rec1[1], rec1[2], rec1[3]
-        bx1, by1, bx2, by2 = rec2[0], rec2[1], rec2[2], rec2[3]
-        if not overlap(ax1, ax2, bx1, bx2) or not overlap(ay1, ay2, by1, by2):
+        if a2 <= b1:
             return False
         else:
             return True
 
+    ax1, ay1, ax2, ay2 = rec1[0], rec1[1], rec1[2], rec1[3]
+    bx1, by1, bx2, by2 = rec2[0], rec2[1], rec2[2], rec2[3]
+    if not overlap(ax1, ax2, bx1, bx2) or not overlap(ay1, ay2, by1, by2):
+        return False
+    else:
+        return True
+
 class TestIsRectangleOverlap(unittest.TestCase):
 
     def test_overlap(self):
-        solution = Solution()
         rec1 = [0, 0, 2, 2]
         rec2 = [1, 1, 3, 3]
-        result = solution.isRectangleOverlap(rec1, rec2)
+        result = isRectangleOverlap(rec1, rec2)
         self.assertTrue(result)
 
     def test_no_overlap(self):
-        solution = Solution()
         rec1 = [0, 0, 1, 1]
         rec2 = [2, 2, 3, 3]
-        result = solution.isRectangleOverlap(rec1, rec2)
+        result = isRectangleOverlap(rec1, rec2)
         self.assertFalse(result)
 
     def test_partial_overlap(self):
-        solution = Solution()
         rec1 = [0, 0, 2, 2]
         rec2 = [1, 1, 2, 3]
-        result = solution.isRectangleOverlap(rec1, rec2)
+        result = isRectangleOverlap(rec1, rec2)
         self.assertTrue(result)
 
     def test_same_rectangle(self):
-        solution = Solution()
         rec1 = [0, 0, 2, 2]
         rec2 = [0, 0, 2, 2]
-        result = solution.isRectangleOverlap(rec1, rec2)
+        result = isRectangleOverlap(rec1, rec2)
         self.assertTrue(result)
 
     def test_single_point_overlap(self):
-        solution = Solution()
         rec1 = [0, 0, 1, 1]
         rec2 = [1, 1, 2, 2]
-        result = solution.isRectangleOverlap(rec1, rec2)
+        result = isRectangleOverlap(rec1, rec2)
         self.assertFalse(result)
 
     def test_minimum_area_rectangle(self):
-        solution = Solution()
         rec1 = [0, 0, 0, 0]
         rec2 = [0, 0, 0, 0]
-        result = solution.isRectangleOverlap(rec1, rec2)
+        result = isRectangleOverlap(rec1, rec2)
         self.assertFalse(result)
 
 if __name__ == '__main__':

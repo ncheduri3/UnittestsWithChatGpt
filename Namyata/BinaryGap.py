@@ -5,52 +5,45 @@ import unittest
 
 
 
-
-class Solution:
-    def binaryGap(self, n: int) -> int:
-        s = f'{n:b}'
-        result = 0
-        for i in range(len(s)):
-            if s[i] == '0':
+def binaryGap(n: int) -> int:
+    s = f'{n:b}'
+    result = 0
+    for i in range(len(s)):
+        if s[i] == '0':
+            continue
+        for j in range(i + 1, len(s)):
+            if s[j] == '0':
                 continue
-            for j in range(i + 1, len(s)):
-                if s[j] == '0':
-                    continue
-                result = max(result, j - i)
-                break
-        return result
+            result = max(result, j - i)
+            break
+    return result
 
 class TestBinaryGap(unittest.TestCase):
 
     def test_binary_gap(self):
-        solution = Solution()
         n = 22
-        result = solution.binaryGap(n)
+        result = binaryGap(n)
         self.assertEqual(result, 2)
 
     def test_no_binary_gap(self):
-        solution = Solution()
         n = 8
-        result = solution.binaryGap(n)
+        result = binaryGap(n)
         self.assertEqual(result, 0)
 
     def test_multiple_binary_gaps(self):
-        solution = Solution()
         n = 37
-        result = solution.binaryGap(n)
+        result = binaryGap(n)
         self.assertEqual(result, 2) # Comment This line and uncomment the next one
         # self.assertEqual(result, 3)
 
     def test_single_bit(self):
-        solution = Solution()
         n = 1
-        result = solution.binaryGap(n)
+        result = binaryGap(n)
         self.assertEqual(result, 0)
 
     def test_maximum_binary_gap(self):
-        solution = Solution()
         n = 5
-        result = solution.binaryGap(n)
+        result = binaryGap(n)
         self.assertEqual(result, 1) # Uncomment the next line and comment this one
         # self.assertEqual(result, 2)
 

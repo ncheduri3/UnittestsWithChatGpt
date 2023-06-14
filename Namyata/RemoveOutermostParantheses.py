@@ -53,32 +53,6 @@ class TestRemoveOuterParenthesesCorrected(unittest.TestCase):
         expected = ""
         self.assertEqual(removeOuterParentheses(s), expected)
 
-class TestRemoveOuterParentheses(unittest.TestCase):
-    def test_single_parentheses(self):
-        s = "()"
-        expected = ""
-        self.assertEqual(removeOuterParentheses(s), expected)
-
-    def test_nested_parentheses(self):
-        s = "(()())"
-        expected = "()()"
-        self.assertEqual(removeOuterParentheses(s), expected)
-
-    def test_multiple_groups(self):
-        s = "()()(()())"
-        expected = "()()()"
-        self.assertEqual(removeOuterParentheses(s), expected)
-
-    def test_no_outer_parentheses(self):
-        s = "()()()"
-        expected = "()()()"
-        self.assertEqual(removeOuterParentheses(s), expected)
-
-    def test_empty_string(self):
-        s = ""
-        expected = ""
-        self.assertEqual(removeOuterParentheses(s), expected)
-
 if __name__ == '__main__':
     unittest.main()
 

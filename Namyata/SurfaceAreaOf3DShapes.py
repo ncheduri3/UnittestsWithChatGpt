@@ -50,32 +50,6 @@ class TestSurfaceArea(unittest.TestCase):
         expected = 164
         self.assertEqual(surfaceArea(grid), expected)
 
-class TestSurfaceArea(unittest.TestCase):
-    def test_empty_grid(self):
-        grid = []
-        expected = 0
-        self.assertEqual(surfaceArea(grid), expected)
-
-    def test_single_block(self):
-        grid = [[1]]
-        expected = 6
-        self.assertEqual(surfaceArea(grid), expected)
-
-    def test_multiple_blocks(self):
-        grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        expected = 104
-        self.assertEqual(surfaceArea(grid), expected)
-
-    def test_zero_blocks(self):
-        grid = [[0, 0], [0, 0]]
-        expected = 0
-        self.assertEqual(surfaceArea(grid), expected)
-
-    def test_large_grid(self):
-        grid = [[3, 2, 1, 0, 4], [2, 5, 6, 7, 3], [1, 0, 3, 4, 2], [2, 1, 0, 3, 2], [4, 3, 2, 1, 0]]
-        expected = 108
-        self.assertEqual(surfaceArea(grid), expected)
-
 if __name__ == '__main__':
     unittest.main()
 
