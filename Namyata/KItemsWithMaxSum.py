@@ -15,31 +15,6 @@ def kItemsWithMaximumSum( numOnes: int, numZeros: int, numNegOnes: int, k: int) 
     return min((k, numOnes)) + (min((numNegOnes, k - numOnes - numZeros)) * -1 if (k - numOnes - numZeros) > 0 else 0)
 
 
-# class TestKItemsWithMaximumSum(unittest.TestCase):
-#
-#     def test_k_items_with_maximum_sum(self):
-#          # Replace YourClass with the actual class name
-#
-#         # Test Case 1
-#         self.assertEqual(kItemsWithMaximumSum(5, 3, 2, 4), 4)
-#
-#         # Test Case 2
-#         self.assertEqual(kItemsWithMaximumSum(2, 4, 1, 3), -1)
-#
-#         # Test Case 3
-#         self.assertEqual(kItemsWithMaximumSum(0, 0, 0, 2), 0)
-#
-#         # Test Case 4
-#         self.assertEqual(kItemsWithMaximumSum(10, 5, 3, 10), 8)
-#
-#         # Test Case 5
-#         self.assertEqual(kItemsWithMaximumSum(3, 2, 1, 6), -2)
-#
-#
-# if __name__ == '__main__':
-#     unittest.main()
-
-# Wrong interpretation of the code.
 
 class CorrectTestKItemsWithMaximumSum(unittest.TestCase):
 
