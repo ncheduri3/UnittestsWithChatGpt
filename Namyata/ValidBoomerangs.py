@@ -1,3 +1,5 @@
+import unittest
+from typing import List
 # Given an array points where points[i] = [xi, yi] represents a point on the X-Y plane, return true if these points are a boomerang.
 #
 # A boomerang is a set of three points that are all distinct and not in a straight line.
@@ -8,8 +10,7 @@
 # points[i].length == 2
 # 0 <= xi, yi <= 100
 
-import unittest
-from typing import List
+
 
 def isBoomerang(points: List[List[int]]) -> bool:
     a, b, c = points

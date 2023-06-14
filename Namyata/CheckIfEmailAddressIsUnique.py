@@ -1,3 +1,5 @@
+import unittest
+from typing import List
 # Every valid email consists of a local name and a domain name, separated by the '@' sign. Besides lowercase letters, the email may contain one or more '.' or '+'.
 #
 # For example, in "alice@leetcode.com", "alice" is the local name, and "leetcode.com" is the domain name.
@@ -12,8 +14,7 @@
 # Given an array of strings emails where we send one email to each emails[i], return the number of different addresses that actually receive mails.
 
 
-import unittest
-from typing import List
+
 
 def numUniqueEmails(emails: List[str]) -> int:
     set_ = set()

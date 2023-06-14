@@ -1,3 +1,4 @@
+import unittest
 # Write an algorithm to determine if a number n is happy.
 #
 # A happy number is a number defined by the following process:
@@ -8,7 +9,6 @@
 # Return true if n is a happy number, and false if not.
 
 
-import unittest
 
 
 def isHappy(n: int) -> bool:

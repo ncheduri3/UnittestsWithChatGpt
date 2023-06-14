@@ -1,3 +1,4 @@
+import unittest
 #
 #
 # Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
@@ -19,7 +20,7 @@
 # C can be placed before D (500) and M (1000) to make 400 and 900.
 # Given a roman numeral, convert it to an integer.
 
-import unittest
+
 
 def romanToInt(s):
     roman = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}

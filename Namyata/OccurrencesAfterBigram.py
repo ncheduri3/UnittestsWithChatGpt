@@ -1,10 +1,11 @@
+import unittest
+from typing import List
 # Given two strings first and second, consider occurrences in some text of the form "first second third",
 # where second comes immediately after first, and third comes immediately after second.
 #
 # Return an array of all the words third for each occurrence of "first second third".
 
-import unittest
-from typing import List
+
 
 def findOcurrences(text: str, first: str, second: str) -> List[str]:
     words = text.split()

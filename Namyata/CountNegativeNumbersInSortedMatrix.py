@@ -1,3 +1,5 @@
+import unittest
+from typing import List
 # Given a m x n matrix grid which is sorted in non-increasing order both row-wise and column-wise,
 # return the number of negative numbers in grid
 # Constraints:
@@ -9,8 +11,7 @@
 
 
 
-import unittest
-from typing import List
+
 
 def countNegatives(grid: List[List[int]]) -> int:
     ROWS, COLS = len(grid), len(grid[0])

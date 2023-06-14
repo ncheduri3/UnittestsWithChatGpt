@@ -1,7 +1,8 @@
+import unittest
 # You are given an array coordinates, coordinates[i] = [x, y], where [x, y] represents
 # the coordinate of a point. Check if these points make a straight line in the XY plane.
 
-import unittest
+
 
 def checkStraightLine(coordinates):
     x0, y0 = coordinates[0]

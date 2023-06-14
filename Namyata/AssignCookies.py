@@ -1,3 +1,6 @@
+import unittest
+from typing import List
+
 # Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.
 #
 # Each child i has a greed factor g[i], which is the minimum size of a cookie that the child will be content with;
@@ -9,9 +12,6 @@
 # 1 <= g.length <= 3 * 104
 # 0 <= s.length <= 3 * 104
 # 1 <= g[i], s[j] <= 231 - 1
-
-import unittest
-from typing import List
 
 def findContentChildren(g: List[int], s: List[int]) -> int:
     g.sort()

@@ -1,3 +1,4 @@
+import unittest
 # Alice and Bob take turns playing a game, with Alice starting first.
 #
 # Initially, there is a number n on the chalkboard. On each player's turn, that player makes a move consisting of:
@@ -8,7 +9,7 @@
 #
 # Return true if and only if Alice wins the game, assuming both players play optimally.
 
-import unittest
+
 
 def divisorGame(n: int) -> bool:
     return n % 2 == 0

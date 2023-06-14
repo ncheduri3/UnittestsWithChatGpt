@@ -1,5 +1,3 @@
-
-
 import unittest
 
 def reverseVowels(s: str) -> str:

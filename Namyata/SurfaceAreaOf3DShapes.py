@@ -1,3 +1,5 @@
+import unittest
+from typing import List
 # You are given an n x n grid where you have placed some 1 x 1 x 1 cubes. Each value v = grid[i][j] represents a tower of v cubes placed on top of cell (i, j).
 #
 # After placing these cubes, you have decided to glue any directly adjacent cubes to each other, forming several irregular 3D shapes.
@@ -8,8 +10,7 @@
 
 
 
-import unittest
-from typing import List
+
 
 def surfaceArea(grid: List[List[int]]) -> int:
     l = len(grid)

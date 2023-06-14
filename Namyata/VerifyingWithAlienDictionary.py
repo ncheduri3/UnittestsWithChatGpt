@@ -1,3 +1,5 @@
+import unittest
+from typing import List
 # Input: words = ["apple","app"], order = "abcdefghijklmnopqrstuvwxyz"
 # Output: false
 # Explanation: The first three characters "app" match, and the second string is shorter (in size.) According to lexicographical rules "apple" > "app",
@@ -11,8 +13,7 @@
 # All characters in words[i] and order are English lowercase letters.
 
 
-import unittest
-from typing import List
+
 
 def isAlienSorted(words: List[str], order: str) -> bool:
     order_counter = {value: index for index, value in enumerate(order)}

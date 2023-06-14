@@ -1,3 +1,6 @@
+import unittest
+from typing import List
+
 # An axis-aligned rectangle is represented as a list [x1, y1, x2, y2], where (x1, y1) is the coordinate of its bottom-left corner, and (x2, y2) is the coordinate of its top-right corner. Its top and bottom edges are parallel to the X-axis, and its left and right edges are parallel to the Y-axis.
 #
 # Two rectangles overlap if the area of their intersection is positive. To be clear, two rectangles that only touch at the corner or edges do not overlap.
@@ -9,8 +12,6 @@
 # -109 <= rec1[i], rec2[i] <= 109
 # rec1 and rec2 represent a valid rectangle with a non-zero area.
 
-import unittest
-from typing import List
 
 class Solution:
     def isRectangleOverlap(self, rec1: List[int], rec2: List[int]) -> bool:

@@ -1,3 +1,4 @@
+import unittest
 # Given two arrays of strings list1 and list2, find the common strings with the least index sum.
 #
 # A common string is a string that appeared in both list1 and list2.
@@ -6,7 +7,7 @@
 #
 # Return all the common strings with the least index sum. Return the answer in any order.
 
-import unittest
+
 
 
 class Solution:

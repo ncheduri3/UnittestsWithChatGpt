@@ -1,3 +1,5 @@
+import unittest
+from typing import List
 # A self-dividing number is a number that is divisible by every digit it contains.
 #
 # For example, 128 is a self-dividing number because 128 % 1 == 0, 128 % 2 == 0, and 128 % 8 == 0.
@@ -7,8 +9,7 @@
 #
 # 1 <= left <= right <= 104
 
-import unittest
-from typing import List
+
 
 
 def selfDividingNumbers(left: int, right: int) -> List[int]:

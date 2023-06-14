@@ -1,4 +1,4 @@
-
+import unittest
 # You are given an array of unique integers salary where salary[i] is the salary of the ith employee.
 #
 # Return the average salary of employees excluding the minimum and maximum salary.
@@ -11,7 +11,6 @@ def some_function( salary) -> float:
         sum += s
     return (sum - salary[0] - salary[-1]) / (len(salary) - 2)
 
-import unittest
 
 class TestSomeFunction(unittest.TestCase):
 

@@ -1,3 +1,4 @@
+import unittest
 def kItemsWithMaximumSum(numOnes: int, numZeros: int, numNegOnes: int, k: int) -> int:
     ones_taken = min(k, numOnes)
     remaining_k = k - ones_taken
@@ -8,7 +9,7 @@ def kItemsWithMaximumSum(numOnes: int, numZeros: int, numNegOnes: int, k: int) -
 # wrong code generation. Misses the case when number of zeroes are greater than numones - k.
 
 
-import unittest
+
 
 class TestKItemsWithMaximumSum(unittest.TestCase):
 
