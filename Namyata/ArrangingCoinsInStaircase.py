@@ -36,8 +36,8 @@ class TestArrangeCoins(unittest.TestCase):
 
     def test_large_number_of_coins(self):
         n = 1000000
-        expected = 1414
-        # expected = 1413
+        # expected = 1414
+        expected = 1413
         self.assertEqual(arrangeCoins(n), expected)
 
 if __name__ == '__main__':
