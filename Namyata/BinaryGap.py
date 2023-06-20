@@ -33,8 +33,8 @@ class TestBinaryGap(unittest.TestCase):
     def test_multiple_binary_gaps(self):
         n = 37
         result = binaryGap(n)
-        self.assertEqual(result, 2) # Comment This line and uncomment the next one
-        # self.assertEqual(result, 3)
+        # self.assertEqual(result, 2) # Comment This line and uncomment the next one
+        self.assertEqual(result, 3)
 
     def test_single_bit(self):
         n = 1
@@ -44,8 +44,8 @@ class TestBinaryGap(unittest.TestCase):
     def test_maximum_binary_gap(self):
         n = 5
         result = binaryGap(n)
-        self.assertEqual(result, 1) # Uncomment the next line and comment this one
-        # self.assertEqual(result, 2)
+        # self.assertEqual(result, 1) # Uncomment the next line and comment this one
+        self.assertEqual(result, 2)
 
 if __name__ == '__main__':
     unittest.main()

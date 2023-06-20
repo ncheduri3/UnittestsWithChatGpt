@@ -26,8 +26,8 @@ class TestNumJewelsInStones(unittest.TestCase):
         jewels = "abc"
         stones = "aabbbccc"
         result = numJewelsInStones(jewels, stones)
-        self.assertEqual(result, 9) # Comment this and Uncomment the next line
-        # self.assertEqual(result, 10)
+        # self.assertEqual(result, 9) # Comment this and Uncomment the next line
+        self.assertEqual(result, 8)
 
     def test_no_jewels_in_stones(self):
         jewels = "abc"
@@ -39,7 +39,7 @@ class TestNumJewelsInStones(unittest.TestCase):
         jewels = "abc"
         stones = "aadefbcc"
         result = numJewelsInStones(jewels, stones)
-        self.assertEqual(result, 6) # Comment this and Uncomment the next line
+        # self.assertEqual(result, 6) # Comment this and Uncomment the next line
         self.assertEqual(result, 5)
 
     def test_empty_stones(self):

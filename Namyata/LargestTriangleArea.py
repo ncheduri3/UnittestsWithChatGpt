@@ -42,8 +42,8 @@ class TestLargestTriangleArea(unittest.TestCase):
     def test_large_triangle_area(self):
         points = [[-50, -50], [0, 0], [50, -50], [0, 25]]
         result = largestTriangleArea(points)
-        self.assertAlmostEqual(result, 1250, places=6) # comment this and uncomment the next line to run
-        # self.assertAlmostEqual(result, 3750, places=6)
+        # self.assertAlmostEqual(result, 1250, places=6) # comment this and uncomment the next line to run
+        self.assertAlmostEqual(result, 3750, places=6)
 
     def test_single_point(self):
         points = [[0, 0]]

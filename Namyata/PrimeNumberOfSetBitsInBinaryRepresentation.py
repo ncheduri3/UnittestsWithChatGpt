@@ -51,36 +51,7 @@ class TestCountPrimeSetBitsCorrected(unittest.TestCase):
         expected = 5
         self.assertEqual(countPrimeSetBits(left, right), expected)
 
-class TestCountPrimeSetBits(unittest.TestCase):
-    def test_left_equal_to_right(self):
-        left = 10
-        right = 10
-        expected = 0
-        self.assertEqual(countPrimeSetBits(left, right), expected)
 
-    def test_no_prime_set_bits(self):
-        left = 1
-        right = 10
-        expected = 4
-        self.assertEqual(countPrimeSetBits(left, right), expected)
-
-    def test_all_prime_set_bits(self):
-        left = 10
-        right = 15
-        expected = 4
-        self.assertEqual(countPrimeSetBits(left, right), expected)
-
-    def test_mixed_prime_set_bits(self):
-        left = 3
-        right = 7
-        expected = 3
-        self.assertEqual(countPrimeSetBits(left, right), expected)
-
-    def test_large_range(self):
-        left = 1000
-        right = 1010
-        expected = 5
-        self.assertEqual(countPrimeSetBits(left, right), expected)
 
 if __name__ == '__main__':
     unittest.main()

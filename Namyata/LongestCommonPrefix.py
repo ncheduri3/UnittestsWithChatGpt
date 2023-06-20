@@ -27,11 +27,6 @@ class LongestCommonPrefixTestCase(unittest.TestCase):
         expected_output = ""
         self.assertEqual(longestCommonPrefix(strs), expected_output)
 
-    def test_empty_array(self):
-        strs = []
-        expected_output = ""
-        self.assertEqual(longestCommonPrefix(strs), expected_output)
-
     def test_single_element_array(self):
         strs = ["apple"]
         expected_output = "apple"

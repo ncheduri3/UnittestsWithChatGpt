@@ -23,8 +23,8 @@ def validWordAbbreviation(word: str, abbr: str) -> bool:
 class TestValidWordAbbreviation(unittest.TestCase):
     def test_valid_abbreviation(self):
         word = "international"
-        abbr = "i12al"
-        # abbr = "i10al"
+        # abbr = "i12al"
+        abbr = "i10al"
         expected = True
         self.assertEqual(validWordAbbreviation(word, abbr), expected)
 

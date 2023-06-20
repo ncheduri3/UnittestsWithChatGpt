@@ -35,20 +35,20 @@ class TestFindLHS(unittest.TestCase):
 
     def test_no_consecutive_elements(self):
         nums = [1, 2, 3, 4, 5]
-        expected = 0
-        # expected = 2
+        # expected = 0
+        expected = 2
         self.assertEqual(findLHS(nums), expected)
 
     def test_negative_numbers(self):
         nums = [-1, -2, -2, -2, -3, -4, -5]
-        expected = 3
-        # expected = 4
+        # expected = 3
+        expected = 4
         self.assertEqual(findLHS(nums), expected)
 
     def test_large_input(self):
         nums = [10**9] * 10**4 + [0] * 10**4
-        expected = 10**4
-        # expected = 0
+        # expected = 10**4
+        expected = 0
         self.assertEqual(findLHS(nums), expected)
 
 if __name__ == '__main__':

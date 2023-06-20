@@ -50,8 +50,8 @@ class TestSelfDividingNumbers(unittest.TestCase):
 
     def test_no_self_dividing_numbers(self):
         result = selfDividingNumbers(30, 35)
-        self.assertListEqual(result, []) # comment this and uncomment the next line
-        # self.assertListEqual(result, [33])
+        # self.assertListEqual(result, []) # comment this and uncomment the next line
+        self.assertListEqual(result, [33])
 
     def test_all_self_dividing_numbers(self):
         result = selfDividingNumbers(1, 100)

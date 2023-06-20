@@ -34,8 +34,8 @@ class TestGeneratePossibleNextMoves(unittest.TestCase):
 
     def test_single_move(self):
         currentState = "++-+"
-        expected = ["--+"]
-        # expected = ["---+"]
+        # expected = ["--+"]
+        expected = ["---+"]
         self.assertEqual(generatePossibleNextMoves(currentState), expected)
 
     def test_multiple_moves(self):
