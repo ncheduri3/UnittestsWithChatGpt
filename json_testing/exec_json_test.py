@@ -2,6 +2,8 @@ import pandas as pd
 import unittest
 import subprocess
 import os
+import re
+
 
 class TestJsonConversion(unittest.TestCase):
     df = pd.read_json('unit_test_combined.json', orient='records', lines=True)
@@ -15,7 +17,40 @@ class TestJsonConversion(unittest.TestCase):
         check = list(self.df['function_name'])
         self.assertEqual(expected, check)
 
-    def test_file(self):
+    def test_headers(self):
+        for header in self.df['header']:
+            splits = header.split('\n')
+            if len(splits) == 3: # No import statements so only function definition
+                self.assertEqual('', splits[0])
+                self.assertEqual('def ', splits[1][:4])
+                self.assertEqual('', splits[2])
+            else: # One or more import statement and one function definition
+                importlines = []
+                for i, line in enumerate(splits):
+                    if line == '':
+                        break
+                    importlines.append(line)
+                for importline in importlines:
+                    if importline[:4] == 'from': # Check if import line is 'from ___ import ___'
+                        regex = r'^from [_a-zA-Z]+ import [_a-zA-Z]+$'
+                        if not re.match(regex, importline):
+                            self.assertEqual(1, 2) # Raise assertion error
+                    else: # Check if import line is 'import ___'
+                        regex = r'^import [_a-zA-Z]+$'
+                        if not re.match(regex, importline):
+                            self.assertEqual(1, 2) # Raise assertion error
+                self.assertEqual('', splits[i])
+                self.assertEqual('', splits[i + 1])
+                self.assertEqual('def ', splits[i + 2][:4])
+                self.assertEqual('', splits[i + 3])
+
+    def test_docstrs(self):
+        for docstr in self.df['docstr']:
+            if docstr != '':
+                self.assertEqual(docstr.split('\n')[0], '\'\'\'')
+                self.assertEqual(docstr.split('\n')[-2], '\'\'\'')
+
+    def test_combine_and_compile(self):
         for i, row in self.df.iterrows():
             with open('genfile.py', 'w') as out:
                 tab = '    '
@@ -38,10 +73,8 @@ class TestJsonConversion(unittest.TestCase):
                 out.write(f'{tab}{tab}print("PASS")\n')
 
             result = subprocess.run(['python', 'genfile.py'], capture_output=True, text=True)
-            try:
-                self.assertEqual('PASS\n', result.stdout)
-            except AssertionError as e:
-                print(row['function_name'])
+            self.assertEqual('PASS\n', result.stdout)
+
 
 if __name__ == '__main__':
     unittest.main()

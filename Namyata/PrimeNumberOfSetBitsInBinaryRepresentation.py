@@ -10,7 +10,6 @@ import unittest
 def countPrimeSetBits(left: int, right: int) -> int:
     count = 0
     for i in range(left, right + 1):
-        print(i, ":", bin(i))
         c = 0
         n = bin(i).count("1")
         for j in range(1, n + 1):

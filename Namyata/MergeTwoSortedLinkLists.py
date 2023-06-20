@@ -7,12 +7,12 @@ import unittest
 
 
 
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 
 def mergeTwoLists(list1, list2):
+    class ListNode:
+        def __init__(self, val=0, next=None):
+            self.val = val
+            self.next = next
     head = ListNode()
     current = head
     while list1 and list2:
@@ -30,6 +30,10 @@ def mergeTwoLists(list1, list2):
 
 class MergeTwoListsCorrectedTestCase(unittest.TestCase):
     def test_merge_lists(self):
+        class ListNode:
+            def __init__(self, val=0, next=None):
+                self.val = val
+                self.next = next
         # Create the input lists
         # list1: 1 -> 2 -> 4
         list1 = ListNode(1)
@@ -68,6 +72,10 @@ class MergeTwoListsCorrectedTestCase(unittest.TestCase):
         self.assertEqual(mergeTwoLists(list1, list2), expected_output)
 
     def test_one_empty_list(self):
+        class ListNode:
+            def __init__(self, val=0, next=None):
+                self.val = val
+                self.next = next
         # list1: 1 -> 2 -> 3
         list1 = ListNode(1)
         list1.next = ListNode(2)
@@ -82,6 +90,10 @@ class MergeTwoListsCorrectedTestCase(unittest.TestCase):
         self.assertEqual(mergeTwoLists(list1, list2), expected_output)
 
     def test_same_values(self):
+        class ListNode:
+            def __init__(self, val=0, next=None):
+                self.val = val
+                self.next = next
         # list1: 1 -> 1 -> 1
         list1 = ListNode(1)
         list1.next = ListNode(1)
